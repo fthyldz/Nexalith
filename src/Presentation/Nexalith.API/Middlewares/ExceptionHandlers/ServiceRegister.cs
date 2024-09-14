@@ -8,6 +8,7 @@ public static class ServiceRegister
         services.AddExceptionHandler<BadRequestExceptionHandler>();
         services.AddExceptionHandler<NotFoundExceptionHandler>();
         services.AddExceptionHandler<InternalServerExceptionHandler>();
+        services.AddExceptionHandler<GlobalExceptionHandler>();
         services.AddProblemDetails();
 
         return services;

@@ -1,6 +1,6 @@
 namespace Nexalith.Api.Middlewares.ExceptionHandlers;
 
-public abstract class NexalithExceptionHandler<TExceptionHandler, TExceptionType>(
+public abstract class BaseExceptionHandler<TExceptionHandler, TExceptionType>(
     ILogger<TExceptionHandler> logger,
     int statusCode)
     : IExceptionHandler
@@ -9,11 +9,11 @@ public abstract class NexalithExceptionHandler<TExceptionHandler, TExceptionType
     public async ValueTask<bool> TryHandleAsync(HttpContext httpContext, Exception exception,
         CancellationToken cancellationToken)
     {
-        logger.LogError("Error Message: {exceptionMessage}, Time of occurrence {time}", exception.Message,
-            DateTime.UtcNow);
-
         if (exception is not TExceptionType)
             return false;
+
+        logger.LogError("Error Message: {exceptionMessage}, Time of occurrence {time}", exception.Message,
+            DateTime.UtcNow);
 
         var problemDetails = new ProblemDetails
         {
