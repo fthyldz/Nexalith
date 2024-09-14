@@ -29,8 +29,8 @@ public abstract class BaseEndpoint<TRequestDto, TRequest, TResponse, TResponseDt
         CancellationToken cancellationToken = default)
     {
         var validators =
-            (IEnumerable<IValidator<TRequest>>)context.RequestServices.GetRequiredService(
-                typeof(IEnumerable<IValidator<TRequest>>));
+            (IEnumerable<IValidator<TRequestDto>>)context.RequestServices.GetRequiredService(
+                typeof(IEnumerable<IValidator<TRequestDto>>));
 
         var validationContext = new ValidationContext<TRequestDto>(request);
 

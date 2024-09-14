@@ -4,7 +4,10 @@ public static class ServiceRegister
 {
     public static IServiceCollection AddNexalithExceptionHandler(this IServiceCollection services)
     {
-        services.AddExceptionHandler<NexalithExceptionHandler>();
+        services.AddExceptionHandler<ValidationExceptionHandler>();
+        services.AddExceptionHandler<BadRequestExceptionHandler>();
+        services.AddExceptionHandler<NotFoundExceptionHandler>();
+        services.AddExceptionHandler<InternalServerExceptionHandler>();
         services.AddProblemDetails();
 
         return services;

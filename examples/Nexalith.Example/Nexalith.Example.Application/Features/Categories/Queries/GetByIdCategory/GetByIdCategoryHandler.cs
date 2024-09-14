@@ -1,3 +1,4 @@
+using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 using Nexalith.Application.Cqrs.Handler;
 using Nexalith.Application.Cqrs.Request;
@@ -19,6 +20,14 @@ public record GetByIdCategoryQuery(CategoryId Id) : IQuery<GetByIdCategoryQueryR
 public record GetByIdCategoryQueryResponse(Category Category) : IBaseResponse;
 
 public record GetByIdCategoryResponseDto(CategoryDto Category) : IBaseResponseDto;
+
+public class GetByIdCategoryQueryValidator : AbstractValidator<GetByIdCategoryQuery>
+{
+    public GetByIdCategoryQueryValidator()
+    {
+        RuleFor(x => x.Id).NotEmpty();
+    }
+}
 
 public class GetByIdCategoryHandlerQueryHandler(IUnitOfWork unitOfWork)
     : IQueryHandler<GetByIdCategoryQuery, GetByIdCategoryQueryResponse>

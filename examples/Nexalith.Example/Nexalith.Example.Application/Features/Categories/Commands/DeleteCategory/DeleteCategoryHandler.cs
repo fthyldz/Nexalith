@@ -1,3 +1,4 @@
+using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 using Nexalith.Application.Cqrs.Handler;
 using Nexalith.Application.Cqrs.Request;
@@ -18,6 +19,14 @@ public record DeleteCategoryCommand(CategoryId Id) : ICommand<DeleteCategoryComm
 public record DeleteCategoryCommandResponse(bool IsSuccess) : IBaseResponse;
 
 public record DeleteCategoryResponseDto(bool IsSuccess) : IBaseResponseDto;
+
+public class DeleteCategoryCommandValidator : AbstractValidator<DeleteCategoryCommand>
+{
+    public DeleteCategoryCommandValidator()
+    {
+        RuleFor(x => x.Id).NotEmpty();
+    }
+}
 
 public class DeleteCategoryHandlerQueryHandler(IUnitOfWork unitOfWork)
     : ICommandHandler<DeleteCategoryCommand, DeleteCategoryCommandResponse>

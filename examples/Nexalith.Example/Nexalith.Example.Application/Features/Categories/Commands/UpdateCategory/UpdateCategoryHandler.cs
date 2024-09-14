@@ -1,3 +1,4 @@
+using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 using Nexalith.Application.Cqrs.Handler;
 using Nexalith.Application.Cqrs.Request;
@@ -19,6 +20,24 @@ public record UpdateCategoryCommand(CategoryId Id, string Name) : ICommand<Updat
 public record UpdateCategoryCommandResponse(bool IsSuccess) : IBaseResponse;
 
 public record UpdateCategoryResponseDto(bool IsSuccess) : IBaseResponseDto;
+
+public class UpdateCategoryRequestDtoValidator : AbstractValidator<UpdateCategoryRequestDto>
+{
+    public UpdateCategoryRequestDtoValidator()
+    {
+        RuleFor(x => x.Id).NotEmpty();
+        RuleFor(x => x.Name).NotEmpty().MaximumLength(100);
+    }
+}
+
+public class UpdateCategoryCommandValidator : AbstractValidator<UpdateCategoryCommand>
+{
+    public UpdateCategoryCommandValidator()
+    {
+        RuleFor(x => x.Id).NotEmpty();
+        RuleFor(x => x.Name).NotEmpty().MaximumLength(100);
+    }
+}
 
 public class UpdateCategoryCommandHandler(IUnitOfWork unitOfWork)
     : ICommandHandler<UpdateCategoryCommand, UpdateCategoryCommandResponse>

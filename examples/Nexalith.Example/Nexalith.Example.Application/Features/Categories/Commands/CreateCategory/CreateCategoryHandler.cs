@@ -1,3 +1,4 @@
+using FluentValidation;
 using Mapster;
 using Nexalith.Application.Cqrs.Handler;
 using Nexalith.Application.Cqrs.Request;
@@ -17,6 +18,22 @@ public record CreateCategoryCommand(string Name) : ICommand<CreateCategoryComman
 public record CreateCategoryCommandResponse(CategoryId Id) : IBaseResponse;
 
 public record CreateCategoryResponseDto(Guid Id) : IBaseResponseDto;
+
+public class CreateCategoryRequestDtoValidator : AbstractValidator<CreateCategoryRequestDto>
+{
+    public CreateCategoryRequestDtoValidator()
+    {
+        RuleFor(x => x.Name).NotEmpty().MaximumLength(100);
+    }
+}
+
+public class CreateCategoryCommandValidator : AbstractValidator<CreateCategoryCommand>
+{
+    public CreateCategoryCommandValidator()
+    {
+        RuleFor(x => x.Name).NotEmpty().MaximumLength(100);
+    }
+}
 
 public class CreateCategoryCommandHandler(IUnitOfWork unitOfWork)
     : ICommandHandler<CreateCategoryCommand, CreateCategoryCommandResponse>
