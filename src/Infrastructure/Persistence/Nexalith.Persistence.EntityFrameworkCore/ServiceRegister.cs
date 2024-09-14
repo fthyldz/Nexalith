@@ -8,8 +8,6 @@ public static class ServiceRegister
     {
         services.AddDbContext<TContext>(dbContextOptions);
 
-        services.AddScoped(typeof(IRepository<>), typeof(Repository<,>));
-
         services.AddScoped<ITransactionManager, TransactionManager<TContext>>();
 
         services.AddScoped<IUnitOfWork, UnitOfWork<TContext>>();

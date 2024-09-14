@@ -1,5 +1,3 @@
-using Nexalith.Application.Dtos.Response;
-
 namespace Nexalith.Application.Dtos.Request;
 
 public record BaseGetByIdRequestDto<TId, TResponse>(TId Id)

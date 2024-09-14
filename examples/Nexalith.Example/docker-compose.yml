@@ -1,0 +1,13 @@
+﻿services:
+  nexalith.example.db:
+    image: postgres
+  
+  nexalith.example.api:
+    image: nexalith.example.api
+    build:
+      context: .
+      dockerfile: Nexalith.Example.Api/Dockerfile
+
+volumes:
+  postgres_nexalith_example_db:
+

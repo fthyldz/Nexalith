@@ -20,6 +20,24 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nexalith.Persistence.Entity
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{97A07E47-1F2E-4F32-8A62-2A9712481BE8}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "examples", "examples", "{73FBDE17-BF22-4A5B-B738-F5851565786B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Nexalith.Example", "Nexalith.Example", "{1FEE48DE-B40D-4437-B57F-A426D09CC1A1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nexalith.Example.Domain", "examples\Nexalith.Example\Nexalith.Example.Domain\Nexalith.Example.Domain.csproj", "{EE62247E-F4DB-419A-89A8-7B0F49C3D6E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nexalith.Example.Application", "examples\Nexalith.Example\Nexalith.Example.Application\Nexalith.Example.Application.csproj", "{61037D01-3D08-409D-973B-84E55076B91F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nexalith.Example.Persistence", "examples\Nexalith.Example\Nexalith.Example.Persistence\Nexalith.Example.Persistence.csproj", "{582DE2C0-BAB2-459E-8487-013EE7FF6DAB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nexalith.Example.Api", "examples\Nexalith.Example\Nexalith.Example.Api\Nexalith.Example.Api.csproj", "{A8CD66E4-728F-4DCD-82FB-DFECF5B569CA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Nexalith.Example Items", "Nexalith.Example Items", "{C7D0FB01-AE46-4F73-BBF2-D8EFC9487194}"
+	ProjectSection(SolutionItems) = preProject
+		examples\Nexalith.Example\docker-compose.override.yml = examples\Nexalith.Example\docker-compose.override.yml
+		examples\Nexalith.Example\docker-compose.yml = examples\Nexalith.Example\docker-compose.yml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -46,6 +64,22 @@ Global
 		{BC0B54C7-7DFC-486F-B47B-14316B6B8F4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BC0B54C7-7DFC-486F-B47B-14316B6B8F4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BC0B54C7-7DFC-486F-B47B-14316B6B8F4A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE62247E-F4DB-419A-89A8-7B0F49C3D6E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE62247E-F4DB-419A-89A8-7B0F49C3D6E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE62247E-F4DB-419A-89A8-7B0F49C3D6E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE62247E-F4DB-419A-89A8-7B0F49C3D6E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61037D01-3D08-409D-973B-84E55076B91F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61037D01-3D08-409D-973B-84E55076B91F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61037D01-3D08-409D-973B-84E55076B91F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61037D01-3D08-409D-973B-84E55076B91F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{582DE2C0-BAB2-459E-8487-013EE7FF6DAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{582DE2C0-BAB2-459E-8487-013EE7FF6DAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{582DE2C0-BAB2-459E-8487-013EE7FF6DAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{582DE2C0-BAB2-459E-8487-013EE7FF6DAB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8CD66E4-728F-4DCD-82FB-DFECF5B569CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8CD66E4-728F-4DCD-82FB-DFECF5B569CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8CD66E4-728F-4DCD-82FB-DFECF5B569CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8CD66E4-728F-4DCD-82FB-DFECF5B569CA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{B94C5E01-1CF6-41AD-B89C-25503FAE3892} = {77C13523-F526-4ED1-98FE-59146808402F}
@@ -57,5 +91,11 @@ Global
 		{77C13523-F526-4ED1-98FE-59146808402F} = {97A07E47-1F2E-4F32-8A62-2A9712481BE8}
 		{EA7ACA8F-9401-4EF7-8ACD-DDB98905A5FF} = {97A07E47-1F2E-4F32-8A62-2A9712481BE8}
 		{CFAB19D4-37D7-4D89-90F0-2AFA5BFF5A90} = {97A07E47-1F2E-4F32-8A62-2A9712481BE8}
+		{1FEE48DE-B40D-4437-B57F-A426D09CC1A1} = {73FBDE17-BF22-4A5B-B738-F5851565786B}
+		{EE62247E-F4DB-419A-89A8-7B0F49C3D6E8} = {1FEE48DE-B40D-4437-B57F-A426D09CC1A1}
+		{61037D01-3D08-409D-973B-84E55076B91F} = {1FEE48DE-B40D-4437-B57F-A426D09CC1A1}
+		{582DE2C0-BAB2-459E-8487-013EE7FF6DAB} = {1FEE48DE-B40D-4437-B57F-A426D09CC1A1}
+		{A8CD66E4-728F-4DCD-82FB-DFECF5B569CA} = {1FEE48DE-B40D-4437-B57F-A426D09CC1A1}
+		{C7D0FB01-AE46-4F73-BBF2-D8EFC9487194} = {1FEE48DE-B40D-4437-B57F-A426D09CC1A1}
 	EndGlobalSection
 EndGlobal

@@ -1,0 +1,23 @@
+services:
+  nexalith.example.db:
+    container_name: nexalith.example.db
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=NexalithExampleDb
+    restart: always
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_nexalith_example_db:/var/lib/postgresql/data
+
+  nexalith.example.api:
+    container_name: nexalith.example.api
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=8080
+      - ConnectionStrings__DefaultConnection=Server=nexalith.example.db;Port=5432;Database=NexalithExampleDb;User Id=postgres;Password=postgres;Include Error Detail=true
+    depends_on:
+      - nexalith.example.db
+    ports:
+      - "6003:8080"
