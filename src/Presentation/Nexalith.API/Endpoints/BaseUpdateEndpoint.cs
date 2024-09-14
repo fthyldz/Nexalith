@@ -7,7 +7,7 @@ public abstract class BaseUpdateEndpoint<TId, TRequestDto, TRequest, TResponse, 
     where TRequestDto : BaseUpdateRequestDto<TId, TResponseDto>
     where TRequest : IBaseCommandQuery<TResponse>
     where TResponse : IBaseResponse
-    where TResponseDto : IBaseResponseDto
+    where TResponseDto : BaseUpdateResponseDto
 {
     public override IEndpointConventionBuilder AddRoutes(IEndpointRouteBuilder app)
     {

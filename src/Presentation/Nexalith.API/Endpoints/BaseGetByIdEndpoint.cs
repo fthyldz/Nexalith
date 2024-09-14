@@ -1,13 +1,14 @@
 namespace Nexalith.Api.Endpoints;
 
-public abstract class BaseGetByIdEndpoint<TId, TRequestDto, TRequest, TResponse, TResponseDto>(
+public abstract class BaseGetByIdEndpoint<TId, TRequestDto, TRequest, TResponse, TResponseDto, TDto>(
     string pattern = "{id}")
     : BaseEndpoint<TRequestDto, TRequest, TResponse, TResponseDto>(pattern)
     where TId : struct
     where TRequestDto : BaseGetByIdRequestDto<TId, TResponseDto>
     where TRequest : IBaseCommandQuery<TResponse>
     where TResponse : IBaseResponse
-    where TResponseDto : IBaseResponseDto
+    where TResponseDto : BaseGetByIdResponseDto<TDto>
+    where TDto : class
 {
     public override IEndpointConventionBuilder AddRoutes(IEndpointRouteBuilder app)
     {

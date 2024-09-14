@@ -17,7 +17,7 @@ public record CreateCategoryCommand(string Name) : ICommand<CreateCategoryComman
 
 public record CreateCategoryCommandResponse(CategoryId Id) : IBaseResponse;
 
-public record CreateCategoryResponseDto(Guid Id) : IBaseResponseDto;
+public record CreateCategoryResponseDto(Guid Id) : BaseCreateResponseDto<Guid>(Id);
 
 public class CreateCategoryRequestDtoValidator : AbstractValidator<CreateCategoryRequestDto>
 {

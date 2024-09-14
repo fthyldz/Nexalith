@@ -14,9 +14,9 @@ public record GetAllCategoriesRequestDto : IBaseRequestDto<GetAllCategoriesRespo
 
 public record GetAllCategoriesQuery : IQuery<GetAllCategoriesQueryResponse>;
 
-public record GetAllCategoriesQueryResponse(IEnumerable<Category> Categories) : IBaseResponse;
+public record GetAllCategoriesQueryResponse(IEnumerable<Category> Data) : IBaseResponse;
 
-public record GetAllCategoriesResponseDto(IEnumerable<CategoryDto> Categories) : IBaseResponseDto;
+public record GetAllCategoriesResponseDto(IEnumerable<CategoryDto> Data) : BaseGetAllResponseDto<CategoryDto>(Data);
 
 public class GetAllCategoriesQueryHandler(IUnitOfWork unitOfWork)
     : IQueryHandler<GetAllCategoriesQuery, GetAllCategoriesQueryResponse>

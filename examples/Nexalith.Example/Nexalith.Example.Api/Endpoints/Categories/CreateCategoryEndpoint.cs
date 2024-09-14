@@ -5,6 +5,6 @@ namespace Nexalith.Example.Api.Endpoints.Categories;
 
 public class CreateCategoryEndpoint(string pattern = "")
     : BaseCreateEndpoint<CreateCategoryRequestDto, CreateCategoryCommand,
-        CreateCategoryCommandResponse, CreateCategoryResponseDto>(pattern)
+        CreateCategoryCommandResponse, CreateCategoryResponseDto, Guid>(pattern)
 {
 }

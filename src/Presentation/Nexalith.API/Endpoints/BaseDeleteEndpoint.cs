@@ -7,7 +7,7 @@ public abstract class BaseDeleteEndpoint<TId, TRequestDto, TRequest, TResponse, 
     where TRequestDto : BaseDeleteRequestDto<TId, TResponseDto>
     where TRequest : IBaseCommandQuery<TResponse>
     where TResponse : IBaseResponse
-    where TResponseDto : IBaseResponseDto
+    where TResponseDto : BaseDeleteResponseDto
 {
     public override IEndpointConventionBuilder AddRoutes(IEndpointRouteBuilder app)
     {

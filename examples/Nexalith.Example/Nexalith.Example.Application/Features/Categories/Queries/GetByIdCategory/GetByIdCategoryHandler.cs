@@ -17,9 +17,9 @@ public record GetByIdCategoryRequestDto(Guid Id) : BaseGetByIdRequestDto<Guid, G
 
 public record GetByIdCategoryQuery(CategoryId Id) : IQuery<GetByIdCategoryQueryResponse>;
 
-public record GetByIdCategoryQueryResponse(Category Category) : IBaseResponse;
+public record GetByIdCategoryQueryResponse(Category Data) : IBaseResponse;
 
-public record GetByIdCategoryResponseDto(CategoryDto Category) : IBaseResponseDto;
+public record GetByIdCategoryResponseDto(CategoryDto Data) : BaseGetByIdResponseDto<CategoryDto>(Data);
 
 public class GetByIdCategoryQueryValidator : AbstractValidator<GetByIdCategoryQuery>
 {

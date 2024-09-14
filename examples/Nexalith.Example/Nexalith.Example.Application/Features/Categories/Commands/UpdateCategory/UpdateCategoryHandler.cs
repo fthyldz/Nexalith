@@ -19,7 +19,7 @@ public record UpdateCategoryCommand(CategoryId Id, string Name) : ICommand<Updat
 
 public record UpdateCategoryCommandResponse(bool IsSuccess) : IBaseResponse;
 
-public record UpdateCategoryResponseDto(bool IsSuccess) : IBaseResponseDto;
+public record UpdateCategoryResponseDto(bool IsSuccess) : BaseUpdateResponseDto(IsSuccess);
 
 public class UpdateCategoryRequestDtoValidator : AbstractValidator<UpdateCategoryRequestDto>
 {

@@ -18,7 +18,7 @@ public record DeleteCategoryCommand(CategoryId Id) : ICommand<DeleteCategoryComm
 
 public record DeleteCategoryCommandResponse(bool IsSuccess) : IBaseResponse;
 
-public record DeleteCategoryResponseDto(bool IsSuccess) : IBaseResponseDto;
+public record DeleteCategoryResponseDto(bool IsSuccess) : BaseDeleteResponseDto(IsSuccess);
 
 public class DeleteCategoryCommandValidator : AbstractValidator<DeleteCategoryCommand>
 {
