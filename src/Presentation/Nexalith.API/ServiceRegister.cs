@@ -1,21 +1,21 @@
-namespace Nexalith.API;
+namespace Nexalith.Api;
 
 public static class ServiceRegister
 {
-    public static IServiceCollection AddCommonApi(this IServiceCollection services, Assembly assembly)
+    public static IServiceCollection AddNexalithApi(this IServiceCollection services, Assembly assembly)
     {
-        services.AddCommonExceptionHandler();
+        services.AddNexalithExceptionHandler();
 
-        services.AddCommonCarter(assembly);
+        services.AddNexalithCarter(assembly);
 
         return services;
     }
 
-    public static WebApplication AddCommonApi(this WebApplication app)
+    public static WebApplication UseNexalithApi(this WebApplication app)
     {
-        app.UseCommonCarter();
+        app.UseNexalithCarter();
 
-        app.UseCommonExceptionHandler();
+        app.UseNexalithExceptionHandler();
 
         return app;
     }

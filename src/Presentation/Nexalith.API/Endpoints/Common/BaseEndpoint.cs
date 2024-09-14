@@ -1,4 +1,4 @@
-namespace Nexalith.API.Endpoints.Common;
+namespace Nexalith.Api.Endpoints.Common;
 
 public abstract class BaseEndpoint<TRequestDto, TRequest, TResponse, TResponseDto>(
     string pattern = "")

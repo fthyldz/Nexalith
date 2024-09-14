@@ -1,8 +1,8 @@
 global using Carter;
 global using FluentValidation;
-global using Nexalith.API.Endpoints.Common;
-global using Nexalith.API.Carter;
-global using Nexalith.API.Middlewares.ExceptionHandlers;
+global using Nexalith.Api.Endpoints.Common;
+global using Nexalith.Api.Carter;
+global using Nexalith.Api.Middlewares.ExceptionHandlers;
 global using Nexalith.Application.Cqrs.Request;
 global using Nexalith.Application.Cqrs.Response;
 global using Nexalith.Application.Dtos.Request;

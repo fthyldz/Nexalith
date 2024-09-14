@@ -1,6 +1,4 @@
-using Nexalith.API.Endpoints.Common;
-
-namespace Nexalith.API.Endpoints;
+namespace Nexalith.Api.Endpoints;
 
 public abstract class BaseGetByIdEndpoint<TId, TRequestDto, TRequest, TResponse, TResponseDto>(
     string pattern = "{id}")

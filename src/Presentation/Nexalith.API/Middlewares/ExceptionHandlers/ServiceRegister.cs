@@ -1,16 +1,16 @@
-namespace Nexalith.API.Middlewares.ExceptionHandlers;
+namespace Nexalith.Api.Middlewares.ExceptionHandlers;
 
 public static class ServiceRegister
 {
-    public static IServiceCollection AddCommonExceptionHandler(this IServiceCollection services)
+    public static IServiceCollection AddNexalithExceptionHandler(this IServiceCollection services)
     {
-        services.AddExceptionHandler<CustomExceptionHandler>();
+        services.AddExceptionHandler<NexalithExceptionHandler>();
         services.AddProblemDetails();
 
         return services;
     }
 
-    public static WebApplication UseCommonExceptionHandler(this WebApplication app)
+    public static WebApplication UseNexalithExceptionHandler(this WebApplication app)
     {
         app.UseExceptionHandler();
 

@@ -12,7 +12,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nexalith.Application", "src
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nexalith.Infrastructure", "src\Infrastructure\Nexalith.Infrastructure\Nexalith.Infrastructure.csproj", "{14C23BF6-C888-4D09-A4E4-AF85C53161B4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nexalith.API", "src\Presentation\Nexalith.API\Nexalith.API.csproj", "{863ADC46-AF3C-4A69-B7A7-455DC88210FB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nexalith.Api", "src\Presentation\Nexalith.Api\Nexalith.Api.csproj", "{863ADC46-AF3C-4A69-B7A7-455DC88210FB}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Persistence", "Persistence", "{8984633A-CCB9-408A-8443-26984F36D414}"
 EndProject

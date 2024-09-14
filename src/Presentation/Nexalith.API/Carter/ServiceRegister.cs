@@ -1,15 +1,15 @@
-namespace Nexalith.API.Carter;
+namespace Nexalith.Api.Carter;
 
 public static class ServiceRegister
 {
-    public static IServiceCollection AddCommonCarter(this IServiceCollection services, Assembly assembly)
+    public static IServiceCollection AddNexalithCarter(this IServiceCollection services, Assembly assembly)
     {
         services.AddCarter(new DependencyContextAssemblyCatalog([assembly]));
 
         return services;
     }
 
-    public static WebApplication UseCommonCarter(this WebApplication app)
+    public static WebApplication UseNexalithCarter(this WebApplication app)
     {
         app.MapCarter();
 

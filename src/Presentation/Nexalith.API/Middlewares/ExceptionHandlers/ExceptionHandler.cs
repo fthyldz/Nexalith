@@ -1,6 +1,6 @@
-namespace Nexalith.API.Middlewares.ExceptionHandlers;
+namespace Nexalith.Api.Middlewares.ExceptionHandlers;
 
-public class CustomExceptionHandler(ILogger<CustomExceptionHandler> logger) : IExceptionHandler
+public class NexalithExceptionHandler(ILogger<NexalithExceptionHandler> logger) : IExceptionHandler
 {
     public async ValueTask<bool> TryHandleAsync(HttpContext httpContext, Exception exception,
         CancellationToken cancellationToken)

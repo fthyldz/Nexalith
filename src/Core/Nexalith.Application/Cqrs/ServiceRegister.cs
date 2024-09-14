@@ -1,10 +1,8 @@
-using Nexalith.Application.Cqrs.Behaviors;
-
 namespace Nexalith.Application.Cqrs;
 
 public static class ServiceRegister
 {
-    public static IServiceCollection AddCommonCqrs(this IServiceCollection services, Assembly assembly)
+    public static IServiceCollection AddNexalithCqrs(this IServiceCollection services, Assembly assembly)
     {
         services.AddMediatR(config =>
         {

@@ -1,10 +1,8 @@
-using Nexalith.Persistence.EntityFrameworkCore.Common;
-
 namespace Nexalith.Persistence.EntityFrameworkCore;
 
 public static class ServiceRegister
 {
-    public static IServiceCollection AddCommonPersistence<TContext>(this IServiceCollection services,
+    public static IServiceCollection AddNexalithPersistence<TContext>(this IServiceCollection services,
         Action<DbContextOptionsBuilder> dbContextOptions)
         where TContext : DbContext
     {
